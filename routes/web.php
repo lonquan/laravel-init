@@ -1,4 +1,4 @@
 <?php
 use App\Http\Controllers\Index\Index;
 
-Route::get('/', Index::class);
+Route::get('/{query?}', Index::class);

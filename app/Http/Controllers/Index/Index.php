@@ -8,13 +8,11 @@ use App\Http\Controllers\Controller;
 class Index extends Controller
 {
     /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function __invoke(Request $request)
     {
-        return view('welcome');
+        return view('index.index');
     }
 }
