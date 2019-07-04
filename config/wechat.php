@@ -1,27 +1,7 @@
 <?php
-
-/*
- * This file is part of the overtrue/laravel-wechat.
- *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 return [
-    /*
-     * 默认配置，将会合并到各模块中
-     */
-    'defaults' => [
-        /*
-         * 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
-         */
-        'response_type' => 'array',
-
-        /*
-         * 使用 Laravel 的缓存系统
-         */
+    'defaults'         => [
+        'response_type'     => 'array',
         'use_laravel_cache' => true,
 
         /*
@@ -31,16 +11,16 @@ return [
          *                 debug/info/notice/warning/error/critical/alert/emergency
          * file：日志文件位置(绝对路径!!!)，要求可写权限
          */
-        'log' => [
+        'log'               => [
             'level' => env('WECHAT_LOG_LEVEL', 'debug'),
-            'file' => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
+            'file'  => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
         ],
     ],
 
     /*
      * 路由配置
      */
-    'route' => [
+    'route'            => [
         /*
          * 开放平台第三方平台路由配置
          */
@@ -59,9 +39,9 @@ return [
      */
     'official_account' => [
         'default' => [
-            'app_id' => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
-            'secret' => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'your-app-secret'),    // AppSecret
-            'token' => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),           // Token
+            'app_id'  => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
+            'secret'  => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'your-app-secret'),    // AppSecret
+            'token'   => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),           // Token
             'aes_key' => env('WECHAT_OFFICIAL_ACCOUNT_AES_KEY', ''),                 // EncodingAESKey
 
             /*
@@ -80,14 +60,20 @@ return [
     /*
      * 开放平台第三方平台
      */
-    // 'open_platform' => [
-    //     'default' => [
-    //         'app_id'  => env('WECHAT_OPEN_PLATFORM_APPID', ''),
-    //         'secret'  => env('WECHAT_OPEN_PLATFORM_SECRET', ''),
-    //         'token'   => env('WECHAT_OPEN_PLATFORM_TOKEN', ''),
-    //         'aes_key' => env('WECHAT_OPEN_PLATFORM_AES_KEY', ''),
-    //     ],
-    // ],
+    'open_platform'    => [
+        'website_app' => [
+            'app_id'        => 'wx85af5dd8c39af771',
+            'secret'        => '18311513963293a594bffc2c2db54f37',
+            'response_type' => 'array',
+            'scopes'        => ['snsapi_login'],
+        ],
+        //     'default' => [
+        //         'app_id'  => env('WECHAT_OPEN_PLATFORM_APPID', ''),
+        //         'secret'  => env('WECHAT_OPEN_PLATFORM_SECRET', ''),
+        //         'token'   => env('WECHAT_OPEN_PLATFORM_TOKEN', ''),
+        //         'aes_key' => env('WECHAT_OPEN_PLATFORM_AES_KEY', ''),
+        //     ],
+    ],
 
     /*
      * 小程序

@@ -2,7 +2,7 @@
 return [
     'driver' => 'redis',
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
+    'lifetime' => 120,
 
     'expire_on_close' => false,
 
@@ -12,25 +12,17 @@ return [
 
     'connection' => 'session',
 
-    'table' => 'sessions',
-
-    'store' => env('SESSION_STORE', null),
-
     'lottery' => [2, 100],
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        'h5_session'
-        // Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+    'cookie' => 'h_c_s',
 
     'path' => '/',
 
     'domain' => env('SESSION_DOMAIN', null),
 
-    'secure' => env('SESSION_SECURE_COOKIE', false),
+    'secure' => false,
 
-    'http_only' => true,
+    'http_only' => false,
 
     'same_site' => null,
 

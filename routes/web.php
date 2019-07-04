@@ -1,4 +1,7 @@
 <?php
-use App\Http\Controllers\Index\Index;
+// 授权登录
+use App\Http\Controllers\Auth\WxLogin;
 
-Route::get('/{query?}', Index::class);
+Route::prefix('auth')->group(function () {
+    Route::get('open-wechat', WxLogin::class);
+});
