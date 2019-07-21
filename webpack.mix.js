@@ -7,6 +7,7 @@ mix
 mix
   .copy('node_modules/element-ui/lib/theme-chalk/index.css', 'public/app-run/css/ele.css')
 
+
 mix
   .styles([
     'resources/css/app.css',

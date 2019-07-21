@@ -9,16 +9,16 @@
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
-    <link rel="stylesheet" href="{{ mix('css/ele.css', 'app-run') }}">
-    <link rel="stylesheet" href="{{ mix('css/app.css', 'app-run') }}">
+    <link rel="stylesheet" href="{{ mix('app-run/css/ele.css') }}">
+    <link rel="stylesheet" href="{{ mix('app-run/css/app.css') }}">
 </head>
 <body>
 <div id="app">
     <router-view></router-view>
 </div>
 
-<script src="{{ mix('js/manifest.js', 'app-run') }}"></script>
-<script src="{{ mix('js/vendor.js', 'app-run') }}"></script>
-<script src="{{ mix('js/app.js', 'app-run') }}"></script>
+<script src="{{ mix('app-run/js/manifest.js') }}"></script>
+<script src="{{ mix('app-run/js/vendor.js') }}"></script>
+<script src="{{ mix('app-run/js/app.js') }}"></script>
 </body>
 </html>
