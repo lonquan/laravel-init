@@ -4,14 +4,20 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/', component: require('./pages/Index').default, name: 'index'},
-  {path: '/share', component: require('./pages/Share').default, name: 'share'},
-  {path: '/certificate', component: require('./pages/Share').default, name: 'share'},
-  {path: '*', component: require('./pages/NotFound').default, name: '404'},
+  {
+    path: '/',
+    component: resolve => (require(['./pages/Index'], resolve)),
+    name: 'index'
+  },
+  {
+    path: '*',
+    component: resolve => (require(['./pages/NotFound'], resolve)),
+    name: '404'
+  },
 ]
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'hash',
   routes
 })
 

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => 'hiplay_api',
+    'name' => env('APP_NAME', ''),
 
     'env' => env('APP_ENV', 'production'),
 

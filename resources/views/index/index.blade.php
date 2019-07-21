@@ -8,21 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>黔西南州第四届全民运动会</title>
-    <style>
-        body{
-            background: #0164c2 url("https://cdn.antapis.com/h5/0601/bg-repeat.png?imageslim") repeat center top;
-            background-size: 80%;
-        }
-    </style>
+    <title>{{ config('app.name') }}</title>
+    <link rel="stylesheet" href="{{ mix('css/ele.css', 'app-run') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css', 'app-run') }}">
 </head>
 <body>
 <div id="app">
     <router-view></router-view>
 </div>
 
-<script src="/js/manifest.js"></script>
-<script src="/js/vendor.js"></script>
-<script src="/js/app.js"></script>
+<script src="{{ mix('js/manifest.js', 'app-run') }}"></script>
+<script src="{{ mix('js/vendor.js', 'app-run') }}"></script>
+<script src="{{ mix('js/app.js', 'app-run') }}"></script>
 </body>
 </html>

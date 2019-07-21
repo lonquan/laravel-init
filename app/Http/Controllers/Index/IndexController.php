@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Index;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Index extends Controller
+class IndexController extends Controller
 {
     /**
      * @param Request $request
